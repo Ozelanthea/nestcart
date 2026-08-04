@@ -26,8 +26,10 @@ if (productGrid !== null) {
 function createProductCard(product) {
     return `
     <div class="product-card">
-    <img src="${product.image}">
-    <h3>${product.title}</h3>
+    <a href ="product.html?id=${product.id}">
+        <img src="${product.image}">
+        <h3>${product.title}</h3>
+    </a>
     <p>$${product.price}</p>
     <button data-id="${product.id}" class="add-to-cart-btn">Add to Cart</button>
     </div>
@@ -78,4 +80,25 @@ function updateCartCount() {
 updateCartCount();
 
 
+const params = new URLSearchParams(window.location.search);
+const productId = params.get("id");
+
+if(productId) {
+    fetch(`https://fakestoreapi.com/products/${productId}`).then(response => response.json()).then(product => renderProductDetail(product));
+}
+
+function renderProductDetail(product) {
+    const productTitle = document.querySelector(".product-title");
+    const productCategory = document.querySelector(".product-category");
+    const productPrice = document.querySelector(".product-price");
+    const productDescription = document.querySelector(".product-description");
+    const productDetailImage = document.querySelector(".product-detail-image img");
+
+    productTitle.textContent = product.title;
+    productCategory.textContent = product.category;
+    productPrice.textContent = `$${product.price}`;
+    productDescription.textContent = product.description;
+    productDetailImage.src = product.image;
+    productDetailImage.alt = product.title;
+}
 
