@@ -6,10 +6,13 @@
     <title>Nestcart</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div>
+    <header class="site-header">
+        <div class="logo">
             <a href="#">Nestcart</a>
         </div>
 
@@ -19,28 +22,42 @@
                 <li><a href="#">Shop</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
+
+                <form action="#" class="search-form search-form-mobile">
+                    <input type="search" placeholder="Search products...">
+                </form>
             </ul>
         </nav>
 
-        <div>
+        <div class="header-actions">
 
-            <form action="#">
+            <form action="#" class="search-form">
                 <input type="search" placeholder="Search products...">
             </form>
 
-            <a href="cart.html">
+            <a href="cart.html" class="cart-link">
                 <i class="bi bi-cart3"></i>
 
-                <span>0</span>
+                <span class="cart-count">0</span>
             </a>
 
         </div>
+
+        <button class="hamburger-btn" aria-label="Toggle menu">
+            <i class="bi bi-list"></i>
+        </button>
     </header>
 
     <section class="hero">
-        <h1>Everything You Need, All in One Place</h1>
-        <p>Shop electronics, fashion, and jewelry — curated picks, honest prices.</p>
-        <a href="#">Shop Now</a>
+        <div class="hero-content">
+            <h1>Everything You Need, All in One Place</h1>
+            <p>Shop electronics, fashion, and jewelry — curated picks, honest prices.</p>
+            <a href="#" class="btn btn-primary">Shop Now</a>
+        </div>
+
+        <div class="hero-image">
+            <img src="assets/nestcart-hero-image.jpg" alt="Shopping cart full of packages">
+        </div>
     </section>
 
     <section class="featured-products">
@@ -48,58 +65,60 @@
         <div class="product-grid"></div>
     </section>
 
-    <section class="category">
+    <section class="categories">
         <h2>Shop by Category</h2>
-        <a href="#">
-            <img src="assets/Men's clothing flatlay.jpg" alt="Men's clothing flatlay">
-            <p>Men's Clothing</p>
-        </a>
-        <a href="#">
-            <img src="assets/Women's clothing flatlay.jpg" alt="Women's clothing flatlay">
-            <p>Women's Clothing</p>
-        </a>
-        <a href="#">
-            <img src="assets/Jewelry flatlay.jpg" alt="Jewelry flatlay">
-            <p>Jewelry</p>
-        </a>
-        <a href="#">
-            <img src="assets/Tech flatlay.jpg" alt="Tech gadgets flatlay">
-            <p>Electronics</p>
-        </a>
+        <div class="category-grid">
+            <a href="#" class="category-card">
+                <img src="assets/Men's clothing flatlay.jpg" alt="Men's clothing flatlay">
+                <p>Men's Clothing</p>
+            </a>
+            <a href="#" class="category-card">
+                <img src="assets/Women's clothing flatlay.jpg" alt="Women's clothing flatlay">
+                <p>Women's Clothing</p>
+            </a>
+            <a href="#" class="category-card">
+                <img src="assets/Jewelry flatlay.jpg" alt="Jewelry flatlay">
+                <p>Jewelry</p>
+            </a>
+            <a href="#" class="category-card">
+                <img src="assets/Tech flatlay.jpg" alt="Tech gadgets flatlay">
+                <p>Electronics</p>
+            </a>
+        </div>
     </section>
 
     <footer>
-        <div>
-            <p>Nestcart is your one-stop shop for electronics, fashion, and jewelry — curated products, honest prices, fast shipping.</p>
+        <div class="footer-top">
+            <p class="footer-about">Nestcart is your one-stop shop for electronics, fashion, and jewelry — curated products, honest prices, fast shipping.</p>
 
-            <div>
+            <div class="footer-links">
                 <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </div>
 
-            <div>
-                <div>
+            <div class="footer-social">
+                <div class="social-icon">
                 <i class="bi bi-facebook"></i>
                 </div>
 
-                <div>
+                <div class="social-icon">
                     <i class="bi bi-instagram"></i>
                 </div>
 
-                <div>
+                <div class="social-icon">
                     <i class="bi bi-twitter-x"></i>
                 </div>
 
-                <div>
+                <div class="social-icon">
                     <i class="bi bi-linkedin"></i>
                 </div>
             </div>
 
-            <div>
+            <div class="footer-contact">
                 <h3>Get in Touch</h3>
                 <p>Email: hello@nestcart.com</p>
                 <p>Location: Port Harcourt, Nigeria</p>
@@ -108,15 +127,18 @@
 
         <hr>
 
-        <div>
+        <div class="footer-bottom">
             <p>© 2026 Nestcart. All rights reserved.</p>
 
-            <div>
-            <a href="#">Privacy Policy · </a> 
-            <a href="#">Terms of Service · </a>
+            <div class="footer-legal">
+            <a href="#">Privacy Policy <span class="footer-span">.</span> </a> 
+            <a href="#">Terms of Service <span class="footer-span">.</span> </a>
             <a href="#">Cookie Settings</a>
             </div>
         </div>
     </footer>
+
+
+    <script src="script.js"></script>
 </body>
 </html>
