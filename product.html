@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nestcart</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo">
+            <a href="#">Nestcart</a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+
+                <form action="#" class="search-form search-form-mobile">
+                    <input type="search" placeholder="Search products...">
+                </form>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+
+            <form action="#" class="search-form">
+                <input type="search" placeholder="Search products...">
+            </form>
+
+            <a href="cart.html" class="cart-link">
+                <i class="bi bi-cart3"></i>
+
+                <span class="cart-count">0</span>
+            </a>
+
+        </div>
+
+        <button class="hamburger-btn" aria-label="Toggle menu">
+            <i class="bi bi-list"></i>
+        </button>
+    </header>
+
+    <main>
+        <a href="index.html">Back to shop</a>
+        <section class="product-detail">
+            <div class="product-detail-image">
+                <img src="" alt="">
+            </div>
+
+            <div class="product-detail-info">
+                <span class="product-category"></span>
+                <h1 class="product-title"></h1>
+                <p class="product-price"></p>
+                <p class="product-description"></p>
+
+                <div class="quantity-selector">
+                    <button class="qty-decrease">-</button>
+                    <span class="qty-value">1</span>
+                    <button class="qty-increase">+</button>
+                </div>
+                <button class="add-to-cart-btn" id="product-add-to-cart">Add to Cart</button>
+                <p class="hidden">✓ Added to cart</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <p class="footer-about">Nestcart is your one-stop shop for electronics, fashion, and jewelry — curated products, honest prices, fast shipping.</p>
+
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <div class="social-icon">
+                <i class="bi bi-facebook"></i>
+                </div>
+
+                <div class="social-icon">
+                    <i class="bi bi-instagram"></i>
+                </div>
+
+                <div class="social-icon">
+                    <i class="bi bi-twitter-x"></i>
+                </div>
+
+                <div class="social-icon">
+                    <i class="bi bi-linkedin"></i>
+                </div>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Get in Touch</h3>
+                <p>Email: hello@nestcart.com</p>
+                <p>Location: Port Harcourt, Nigeria</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="footer-bottom">
+            <p>© 2026 Nestcart. All rights reserved.</p>
+
+            <div class="footer-legal">
+            <a href="#">Privacy Policy <span class="footer-span">.</span> </a> 
+            <a href="#">Terms of Service <span class="footer-span">.</span> </a>
+            <a href="#">Cookie Settings</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -346,6 +346,11 @@ hr {
     margin-left: 0.5rem;
 }
 
+/* product.html styles */
+.hidden {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .hamburger-btn {
         display: block;

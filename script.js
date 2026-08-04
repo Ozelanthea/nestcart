@@ -9,17 +9,19 @@ hamburgerBtn.addEventListener("click", () => {
 
 })
 
-productGrid.addEventListener("click", (e) => {
-    if(e.target.classList.contains("add-to-cart-btn")) {
-        let idValue = Number(e.target.dataset.id);
+if (productGrid !== null) {
+    productGrid.addEventListener("click", (e) => {
+        if(e.target.classList.contains("add-to-cart-btn")) {
+            let idValue = Number(e.target.dataset.id);
 
-        let product = allProducts.find(item => item.id === idValue);
+            let product = allProducts.find(item => item.id === idValue);
 
-        addToCart(product);
-    }
-})
+            addToCart(product);
+        }
+    })
 
-fetch("https://fakestoreapi.com/products").then(response => response.json()).then(data => renderProducts(data));
+    fetch("https://fakestoreapi.com/products").then(response => response.json()).then(data => renderProducts(data));
+}
 
 function createProductCard(product) {
     return `
