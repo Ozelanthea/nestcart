@@ -2,7 +2,13 @@ const hamburgerBtn = document.querySelector(".hamburger-btn");
 const navMenu = document.querySelector("nav ul");
 const productGrid = document.querySelector(".product-grid");
 const cartCount = document.querySelector(".cart-count");
+const qtyDecrease = document.querySelector(".qty-decrease");
+const qtyIncrease = document.querySelector(".qty-increase");
+const qtyValue = document.querySelector(".qty-value");
+const productAddToCart = document.querySelector("#product-add-to-cart");
 let allProducts = [];
+let currentProduct = null;
+let currentQty = 1;
 
 hamburgerBtn.addEventListener("click", () => {
     navMenu.classList.toggle('nav-open')
@@ -16,7 +22,7 @@ if (productGrid !== null) {
 
             let product = allProducts.find(item => item.id === idValue);
 
-            addToCart(product);
+            addToCart(product, 1);
         }
     })
 
@@ -55,15 +61,15 @@ function saveCart(cart) {
     localStorage.setItem("cart", JSON.stringify(cart))
 }
 
-function addToCart(product) {
+function addToCart(product, qty) {
     let cart = getCart();
     let existingItem = cart.find(item => item.id === product.id);
 
     if (existingItem) {
-        existingItem.quantity++;
+        existingItem.quantity += qty;
     } else {
         cart.push(
-            {id: product.id, title: product.title, price: product.price, image: product.image, quantity: 1}
+            {id: product.id, title: product.title, price: product.price, image: product.image, quantity: qty}
         );
     }
 
@@ -94,11 +100,39 @@ function renderProductDetail(product) {
     const productDescription = document.querySelector(".product-description");
     const productDetailImage = document.querySelector(".product-detail-image img");
 
+    currentProduct = product;
     productTitle.textContent = product.title;
     productCategory.textContent = product.category;
     productPrice.textContent = `$${product.price}`;
     productDescription.textContent = product.description;
     productDetailImage.src = product.image;
     productDetailImage.alt = product.title;
+}
+
+if(qtyIncrease) {
+    qtyIncrease.addEventListener("click", () => {
+        currentQty++;
+        qtyValue.textContent = currentQty;
+    })
+
+    qtyDecrease.addEventListener("click", () => {
+        if (currentQty > 1) {
+            currentQty--;
+            qtyValue.textContent = currentQty; 
+        }
+    })
+
+    productAddToCart.addEventListener("click", () => {
+        addToCart(currentProduct, currentQty);
+
+        const confirmMsg = document.querySelector(".product-detail-info p:last-child");
+        confirmMsg.classList.remove("hidden");
+        setTimeout(() => {
+            confirmMsg.classList.add("hidden");
+        }, 2000);
+
+        currentQty = 1;
+        qtyValue.textContent = currentQty
+    })
 }
 
