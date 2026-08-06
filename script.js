@@ -12,6 +12,8 @@ const cartSummary = document.querySelector(".cart-summary");
 const orderItemsDiv = document.querySelector(".order-items");
 const sameAsBilling = document.querySelector("#same-as-billing");
 const shippingFields = document.querySelector("#shipping-fields");
+const billingForm = document.querySelector("#billing-form");
+const shippingInputs = shippingFields.querySelectorAll("input");
 let allProducts = [];
 let currentProduct = null;
 let currentQty = 1;
@@ -238,9 +240,22 @@ if (sameAsBilling !== null) {
     sameAsBilling.addEventListener("change", () => {
         if (sameAsBilling.checked) {
             shippingFields.classList.add("hidden");
+            shippingInputs.forEach(input => input.required = false);
         } else {
             shippingFields.classList.remove("hidden");
+            shippingInputs.forEach(input => input.required = true);
         }
     })
     
+}
+
+if (billingForm !== null) {
+
+    billingForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        saveCart([]);
+        updateCartCount();
+        alert("Order placed successfully! Thank you, " + document.querySelector("#billing-name").value);
+    })
+
 }
