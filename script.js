@@ -13,7 +13,6 @@ const orderItemsDiv = document.querySelector(".order-items");
 const sameAsBilling = document.querySelector("#same-as-billing");
 const shippingFields = document.querySelector("#shipping-fields");
 const billingForm = document.querySelector("#billing-form");
-const shippingInputs = shippingFields.querySelectorAll("input");
 let allProducts = [];
 let currentProduct = null;
 let currentQty = 1;
@@ -250,6 +249,7 @@ if (sameAsBilling !== null) {
 }
 
 if (billingForm !== null) {
+    const shippingInputs = shippingFields.querySelectorAll("input");
 
     billingForm.addEventListener("submit", (e) => {
         e.preventDefault();
