@@ -526,6 +526,104 @@ hr {
     font-size: 1.1rem;
 }
 
+/* checkout.html styles */
+.checkout-section {
+    display: flex;
+    gap: 3rem;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.checkout-form {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.checkout-form h3 {
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+}
+
+.form-group input {
+    padding: 0.65rem 0.9rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: var(--color-primary);
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.billing-fields, #shipping-fields, .payment-fields {
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+}
+
+.order-summary {
+    flex: 1;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    position: sticky;
+    top: 90px;
+}
+
+.order-summary h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.order-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.order-summary p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.order-summary .btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
 @media (max-width: 768px) {
     .hamburger-btn {
         display: block;
@@ -567,6 +665,14 @@ hr {
 
     .product-detail-image img {
         max-height: 320px;
+    }
+
+    .checkout-section {
+        flex-direction: column;
+    }
+
+    .order-summary {
+        position: static;
     }
 }
 
