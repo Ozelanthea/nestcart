@@ -576,7 +576,8 @@ hr {
     color: var(--color-text-muted);
 }
 
-.form-group input {
+.form-group input:not([type="checkbox"]) {
+    width: 100%;
     padding: 0.65rem 0.9rem;
     border: 1px solid var(--color-border);
     border-radius: 6px;
@@ -593,6 +594,7 @@ hr {
     flex-direction: row;
     align-items: center;
     gap: 0.6rem;
+    white-space: nowrap;
 }
 
 .billing-fields, #shipping-fields, .payment-fields {
@@ -708,6 +710,7 @@ hr {
 
     .checkout-section {
         flex-direction: column;
+        align-items: stretch;
     }
 
     .order-summary {
@@ -735,8 +738,38 @@ hr {
         grid-template-columns: 1fr;
     }
 
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .cart-item img {
+        width: 100%;
+        height: 160px;
+    }
+
+    .cart-item-info {
+        flex: 1;
+    }
+    
+    .cart-item-total {
+        text-align: left;
+    }
+
     .product-grid {
         grid-template-columns: 1fr;
+    }
+
+    .order-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .order-item img {
+        width: 80px;
+        height: 80px;
     }
 
     .footer-top {
