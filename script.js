@@ -10,6 +10,8 @@ const cartItemsDiv = document.querySelector(".cart-items");
 const emptyMessage = document.querySelector(".empty-cart-message");
 const cartSummary = document.querySelector(".cart-summary");
 const orderItemsDiv = document.querySelector(".order-items");
+const sameAsBilling = document.querySelector("#same-as-billing");
+const shippingFields = document.querySelector("#shipping-fields");
 let allProducts = [];
 let currentProduct = null;
 let currentQty = 1;
@@ -229,4 +231,16 @@ function renderOrderSummary() {
 
 if (orderItemsDiv !== null) {
     renderOrderSummary();
+}
+
+if (sameAsBilling !== null) {
+
+    sameAsBilling.addEventListener("change", () => {
+        if (sameAsBilling.checked) {
+            shippingFields.classList.add("hidden");
+        } else {
+            shippingFields.classList.remove("hidden");
+        }
+    })
+    
 }
