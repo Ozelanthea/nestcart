@@ -9,6 +9,7 @@ const productAddToCart = document.querySelector("#product-add-to-cart");
 const cartItemsDiv = document.querySelector(".cart-items");
 const emptyMessage = document.querySelector(".empty-cart-message");
 const cartSummary = document.querySelector(".cart-summary");
+const orderItemsDiv = document.querySelector(".order-items");
 let allProducts = [];
 let currentProduct = null;
 let currentQty = 1;
@@ -206,3 +207,26 @@ if (cartItemsDiv !== null) {
     updateCartCount();
 }
 
+function createOrderItemRow(item) {
+    return `
+    <div class="order-item">
+        <img src="${item.image}">
+        <p>${item.title} x ${item.quantity}</p>
+        <p>$${(item.price * item.quantity).toFixed(2)}</p>
+    </div>
+    `
+}
+
+function renderOrderSummary() {
+    const cart = getCart();
+
+    orderItemsDiv.innerHTML = cart.map(createOrderItemRow).join("");
+
+    const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
+    document.querySelector("#order-subtotal").textContent = "$" + subtotal.toFixed(2);
+    document.querySelector("#order-total").textContent = "$" + subtotal.toFixed(2);
+}
+
+if (orderItemsDiv !== null) {
+    renderOrderSummary();
+}
